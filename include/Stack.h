@@ -22,51 +22,48 @@ class Stack
 
 
 template <class StackType>
-Stack<StackType>::Stack(void) : Top( NULL ), totalElements(0)
-{
+Stack<StackType>::Stack(void) : Top( NULL ), totalElements(0) {
 }
 
 template <class StackType>
-Stack<StackType>::~Stack()
-{
+Stack<StackType>::~Stack() {
 }
 
 template <class StackType>
-Stack<StackType>& Stack<StackType>::Push(const StackType toPush)
-{
+Stack<StackType>& Stack<StackType>::Push(const StackType toPush) {
     Node<StackType>* toAdd = new Node<StackType>(toPush);
+    if(!IsEmpty()){
+        Node<StackType>* aux = Top;
+        toAdd->SetNext(aux);
+    }
     Top = toAdd;
     totalElements++;
     return *this;
 }
 
 template <class StackType>
-StackType Stack<StackType>::Pop()
-{
-    if(IsEmpty()){
-
+StackType Stack<StackType>::Pop() {
+    if(!IsEmpty()){
+        Node<StackType>* toPop = Top;
+        Top = toPop->GetNext();
+        totalElements--;
+        return toPop->GetValue();
     }
-    Node<StackType>* toPop = Top;
-    Top = toPop->ViewNext();
-    totalElements--;
-    return toPop->ViewValue();
+    return NULL;
 }
 
 template <class StackType>
-StackType Stack<StackType>::Peek()
-{
+StackType Stack<StackType>::Peek() {
     return Top->ViewValue();
 }
 
 template <class StackType>
-bool Stack<StackType>::IsEmpty()
-{
+bool Stack<StackType>::IsEmpty() {
     return totalElements == 0;
 }
 
 template <class StackType>
-int Stack<StackType>::Size()
-{
+int Stack<StackType>::Size() {
     return totalElements;
 }
 

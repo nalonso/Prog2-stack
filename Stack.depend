@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1558298583 source:d:\personal\prog ii\stack\main.cpp
+1558299427 source:d:\personal\prog ii\stack\main.cpp
 	<iostream>
 	"Stack.h"
 
 1558296826 source:d:\personal\prog ii\stack\src\stack.cpp
 	"Stack.h"
 
-1558298732 d:\personal\prog ii\stack\include\stack.h
+1558299729 d:\personal\prog ii\stack\include\stack.h
 	"Node.h"
 
 1558296851 source:d:\personal\prog ii\stack\src\node.cpp
 	"Node.h"
 
-1558298280 d:\personal\prog ii\stack\include\node.h
+1558299612 d:\personal\prog ii\stack\include\node.h
 	<cstddef>
 

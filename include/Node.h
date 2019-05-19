@@ -18,11 +18,11 @@ public:
 
     Node<NodeType>& SetNode(NodeType, Node<NodeType> *);
     Node<NodeType>& DropNode(void);
-    Node<NodeType>& ChangeNext(Node<NodeType> *);
-    Node<NodeType>& ChangeValue(NodeType);
+    Node<NodeType>& SetNext(Node<NodeType> *);
+    Node<NodeType>& SetValue(NodeType);
 
-    NodeType ViewValue(void);
-    Node<NodeType>* ViewNext(void);
+    NodeType GetValue(void);
+    Node<NodeType>* GetNext(void);
 
 };
 
@@ -47,13 +47,13 @@ template <class NodeType>
 void Node<NodeType>::operator=(const Node&){};
 
 template<class NodeType>
-NodeType Node<NodeType>::ViewValue(void)
+NodeType Node<NodeType>::GetValue(void)
 {
     return nodeValue;
 };
 
 template<class NodeType>
-Node<NodeType>* Node<NodeType>::ViewNext(void)
+Node<NodeType>* Node<NodeType>::GetNext(void)
 {
     return nextNode;
 };
@@ -61,11 +61,8 @@ Node<NodeType>* Node<NodeType>::ViewNext(void)
 template <class NodeType>
 Node<NodeType>& Node<NodeType>::SetNode(NodeType node_value, Node<NodeType>* next)
 {
-    bool checked = false;
-
     ChangeValue(node_value);
-    checked = ChangeNext(next);
-    //(nodeValue!=NULL || nodeValue!=nullptr) ? checked=true : checked=false;
+    ChangeNext(next);
     return *this;
 };
 
@@ -81,16 +78,16 @@ Node<NodeType>& Node<NodeType>::DropNode(void)
 };
 
 template <class NodeType>
-Node<NodeType>& Node<NodeType>::ChangeNext(Node<NodeType>* new_next)
+Node<NodeType>& Node<NodeType>::SetNext(Node<NodeType>* newNext)
 {
-    nextNode = new_next;
+    nextNode = newNext;
     return *this;
 };
 
 template <class NodeType>
-Node<NodeType>& Node<NodeType>::ChangeValue(const NodeType new_value)
+Node<NodeType>& Node<NodeType>::SetValue(const NodeType newValue)
 {
-    nodeValue = new_value;
+    nodeValue = newValue;
     return *this;
 };
 

@@ -11,6 +11,14 @@ int main()
     cout << "Tiene " << stackInst.Size() << " elementos" << endl;
     cout << stackInst.Pop() << endl;
     cout << "Tiene " << stackInst.Size() << " elementos" << endl;
+    cout << stackInst.Pop() << endl;
+    cout << "Tiene " << stackInst.Size() << " elementos" << endl;
+    cout << stackInst.Pop() << endl;
+    cout << "Tiene " << stackInst.Size() << " elementos" << endl;
+    cout << stackInst.Pop() << endl;
+    cout << "Tiene " << stackInst.Size() << " elementos" << endl;
+    cout << stackInst.Pop() << endl;
+    cout << "Tiene " << stackInst.Size() << " elementos" << endl;
     cout << "Hello world!" << endl;
     return 0;
 }
