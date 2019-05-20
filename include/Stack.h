@@ -59,7 +59,7 @@ StackType Stack<StackType>::Peek() {
 
 template <class StackType>
 bool Stack<StackType>::IsEmpty() {
-    return totalElements == 0;
+    return Size() == 0;
 }
 
 template <class StackType>
